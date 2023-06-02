@@ -1,0 +1,294 @@
+# Group Name
+# //////////////////////////////////////////////////////
+# ////////////    Coding Comrades  /////////////////////  
+# //////////////////////////////////////////////////////
+# Group Leader
+# ----------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>-------------- 
+# ----------->>>>>>  Aiman Shabbir  <<<<<<--------------
+# -----------<<<<<<<<<<<<<<<<<<<<<<<<<<<<<--------------
+# Group Members 
+# ------------>>>>>  ALishba Shaukat <<<< --------------
+# ------------>>>>>  Mehvish Shareef <<<< --------------
+# ------------>>>>>  Shaista Parveen <<<< --------------
+# ------------>>>>>     Laiba Noor   <<<< --------------
+# Project Title
+# """"""""""""""""""""""""""""""""""""""""""""""""""""""
+# """""""""""""""  Triathlon PK  """""""""""""""""""""""
+# """"""""""""""""""""""""""""""""""""""""""""""""""""""
+# Date of Creation 
+# ******************************************************
+# ***************   25-May-2023  ***********************
+# ******************************************************
+# Language 
+# \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+# \\\\\\\\\\\\\\      Python     \\\\\\\\\\\\\\\\\\\\\\\
+# \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+import os
+from colorama import Fore
+import time
+from tqdm import tqdm
+for i in tqdm(range(100),colour='YELLOW'):
+    time.sleep(0.02)
+# HOSPITAL CLASS
+class Hospital:
+    def __init__(self, name, location, contact_no, opening_time, closing_time):
+        self.name = name
+        self.location = location
+        self.contact_no = contact_no
+        self.opening_time = opening_time
+        self.closing_time = closing_time
+        
+    def display(self):
+        print("                       HOSPITAL NAME            : ", self.name)
+        print("                       HOSPITAL LOCATION        : ", self.location)
+        print("                       Contact Number           : ", self.contact_no)
+        print("                       HOSPITAL OPENING TIME    : ", self.opening_time)
+        print("                       HOSPITAL CLOSING TIME    : ", self.closing_time)
+
+
+# PATIENT CLASS
+class Patient:
+    def __init__(self, name, age, gender, contact_number, address, disease_name, token_no):
+        self.name = name
+        self.age = age
+        self.gender = gender
+        self.contact_number = contact_number
+        self.address = address
+        self.disease_name = disease_name
+        self.token_no = token_no
+
+    def display(self):
+        print("                       PATIENT NAME      : ", self.name)
+        print("                       PATIENT AGE       : ", self.age)
+        print("                       PATIENT GENDER    : ", self.gender)
+        print("                       PATIENT Cell No   : ", self.contact_number)
+        print("                       PATIENT ADDRESS   : ", self.address)
+        print("                       DISEASE NAME      : ", self.disease_name)
+        print("                       TOKEN NUMBER      : ", self.token_no)
+
+
+# DOCTOR CLASS
+class Doctor:
+    def __init__(self, id_num, name, age, gender, contact_no):
+        self.id_num = id_num
+        self.name = name
+        self.age = age
+        self.gender = gender
+        self.contact_no = contact_no
+
+
+class Cardiologist(Doctor):
+    def working(self):
+        print("                       A cardiologist is a physician who is an expert in the care\n                       of your heart and blood vessels")
+
+    specialization = "HEART specialist"
+
+    def display(self):
+        print("                       ************************************************************")
+        print("                       >>>>>>>>>>>          CARDIOLOGIST DOCTOR         <<<<<<<<<<<")
+        print("                       ************************************************************")
+        print("                       ID NUMBER      : ", self.id_num)
+        print("                       NAME           : ", self.name)
+        print("                       AGE            : ", self.age)
+        print("                       GENDER         : ", self.gender)
+        print("                       CELL NO        : ", self.contact_no)
+        print("                       specialization : ", self.specialization)
+
+
+
+class Pediatrician(Doctor):
+    def working(self):
+        print("                       A doctor who has special training in preventing, diagnosing,\n                       and treating diseases and injuries in children.")
+
+    specialization = "DISEASE AND INJURIES IN CHILDREN"
+
+    def display(self):
+        print("                       ************************************************************")
+        print("                       >>>>>>>>>>>          PEDIATRICIAN DOCTOR         <<<<<<<<<<<")
+        print("                       ************************************************************")
+        print("                       ID NUMBER      : ", self.id_num)
+        print("                       NAME           : ", self.name)
+        print("                       AGE            : ", self.age)
+        print("                       GENDER         : ", self.gender)
+        print("                       CELL NO        : ", self.contact_no)
+        print("                       specialization : ", self.specialization)
+
+
+class Neurologist(Doctor):
+    def working(self):
+        print("                       Neurologists are specialists who treat diseases of the brain \n                       and spinal cord, peripheral nerves, and muscles")
+
+    specialization = "specialization in NEUROLOGY"
+
+    def display(self):
+        print("                       ************************************************************")
+        print("                       >>>>>>>>>>>          NEUROLOGIST DOCTOR          <<<<<<<<<<<")
+        print("                       ************************************************************")
+        print("                       ID NUMBER      : ", self.id_num)
+        print("                       NAME           : ", self.name)
+        print("                       AGE            : ", self.age)
+        print("                       GENDER         : ", self.gender)
+        print("                       CELL NO        : ", self.contact_no)
+        print("                       specialization : ", self.specialization)
+
+
+# MAIN CODE
+patients = []
+a = 1
+while a == 1:
+    print(Fore.GREEN)
+    print("                       ************************************************************")
+    print("                       ************************************************************")
+    print("                       ** >>>>>>>>       Welcome To Nishter Hospital    <<<<<<<< **")
+    print("                       ************************************************************")
+    print("                       ************************************************************")
+    print("                       Press '1' for Hospital details")
+    print("                       Press '2' for Doctor details")
+    print("                       Press '3' for Patient Entry")
+    print("                       Press '4' for Doctor Entry")
+    print("                       Press '5' for patient details")
+    print("                       Press '6' to Exit")
+    try:
+        num = int(input("                       Enter your number: "))
+        if num == 1:
+            print(Fore.RED)
+            os.system("cls")        
+            
+            print("                       ************************************************************")
+            print("                       >>>>>>>>>>>                 ABOUT US             <<<<<<<<<<<")
+            print("                       ************************************************************")
+            obj = Hospital('NISHTER', 'NEW MULTAN', '03027431995', '7:00am', '11:00pm')
+            obj.display()
+
+        elif num == 2:
+            print(Fore.MAGENTA)
+            os.system("cls")
+            print("                       ************************************************************")
+            print("                       >>>>>>>>>>>               DOCTORS INFO           <<<<<<<<<<<")
+            print("                       ************************************************************")        
+            print("                       **There are three types of Doctors here**")
+            print("                       1: Cardiologist")
+            print("                       2: Pediatrician")
+            print("                       3: Neurologist")
+            num_doc = int(input("                       Enter your number for any doctor details: "))
+
+            if num_doc == 1:
+                os.system("cls")  
+                obj = Cardiologist("01", "Dr.Aiman", "25 years", "Female", "03027431995")
+                obj.display()
+                obj.working()
+
+            elif num_doc == 2:
+                os.system("cls")  
+                obj = Pediatrician("02", "Dr.Alishba", "26 years", "Female", "03027431995")
+                obj.display()
+                obj.working()
+
+            elif num_doc == 3:
+                os.system("cls")        
+                print(Fore.BLUE)
+                obj = Neurologist("03", "Dr.Laiba",  "27 years", "Female", "03027431995")
+                obj.display()
+                obj.working()
+
+        elif num == 3:
+            print(Fore.YELLOW)
+            print("                       ************************************************************")
+            print("                       >>>>>>>>>>>               PATIENT ENTRY          <<<<<<<<<<<")
+            print("                       ************************************************************")
+            try:
+                name = input("                       Enter patient name: ")
+            except:
+                print("                       Invalid Input")
+            try:
+                age = int(input("                       Enter your Age: "))
+            except:
+                print("                       Invalid Input")
+            try:
+                gender = input("                       Enter your Gender: ")
+            except:
+                print("                       Invalid Input")
+            try:
+                contact_number = int(input("                       Enter your Contact Number: "))
+            except:
+                print("                       Invalid Input")
+            try:
+                address = input("                       Enter your Address: ")
+            except:
+                print("                       Invalid Input")
+            try:
+                disease_name = input("                       Enter Patient disease: ")
+            except:
+                print("                       Invalid Input")
+            try:
+                token_no = int(input("                       Enter your Token Number: "))
+            except:
+                print("                       Invalid Input")
+            obj = Patient(name, age, gender, contact_number, address, disease_name, token_no)
+            patients.append(obj)
+            print("                       Patient details entered.")
+
+
+        elif num == 4:
+            print(Fore.YELLOW)
+            print("                       ************************************************************")
+            print("                       >>>>>>>>>>>               Doctor ENTRY          <<<<<<<<<<<")
+            print("                       ************************************************************")
+            
+            try:
+                id_num = int(input("                       Enter id_num: "))
+            except:
+                print("                       Invalid Input")
+            
+            try:
+                name = input("                       Enter doctor name: ")
+            except:
+                print("                       Invalid Input")
+            try:
+                age = int(input("                       Enter doctor Age: "))
+            except:
+                print("                       Invalid Input")
+            try:
+                gender = input("                       Enter doctor Gender: ")
+            except:
+                print("                       Invalid Input")
+            try:
+                contact_no = int(input("                       Enter doctor Contact Number: "))
+            except:
+                print("                       Invalid Input")
+            try:
+                specialization = input("                       Enter doctor specialization: ")
+            except:
+                print("                       Invalid Input")
+
+            obj = doc (id_num, name, age, gender, contact_no, specialization)
+            Doctor.append(obj)
+            print("                       Doctor data entered.")
+
+        elif num == 5:
+            os.system("cls")        
+            print(Fore.RED)
+            print("                       ************************************************************")
+            print("                       >>>>>>>>>>>              PATIENT DETAILS         <<<<<<<<<<<")
+            print("                       ************************************************************")
+            for patient in patients:
+                print("                       Patient name:      ", patient.name)
+                print("                       Patient age:       ", patient.age)
+                print("                       Patient gender:    ", patient.gender)
+                print("                       Patient contact:   ", patient.contact_number)
+                print("                       Patient address:   ", patient.address)
+                print("                       Patient's disease: ", patient.disease_name)
+                print("                       Token#:            ", patient.token_no)
+
+        elif num == 6:
+            os.system("cls")        
+            print(Fore.RED)
+            print("                       ************************************************************")
+            print("                       >>>>>>>>>>>            Thanks for visiting       <<<<<<<<<<<")
+            print("                       ************************************************************")
+            a = 0
+        else:
+            print("Invalid Input. Try again")
+    except:
+        print("Invalid number")
+        
